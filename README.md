@@ -1,4 +1,41 @@
-# scheduler-ui
+# Scheduler-UI
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)  ![branch parameter](https://github.com/PSMRI/Scheduler-UI/actions/workflows/sast-and-package.yml/badge.svg)
+
+It acts as an interface between client and the scheduling services provided, allowing users to interact for consultation with specialists. It also provides the info of availability and unavailability of specialists, retrieving available slots for specialists, booking and cancelling slots, and fetching day views of specialists for a particular specialization.
+
+### Features
+* Handles various requests for scheduling/booking/cancelling slots
+* Provides slots availability
+* provides specialists availability of any day
+
+## Building From Source
+This microservice is built on Java, Spring boot framework and MySQL DB.
+
+Prerequisites 
+* Admin-API module should be running
+* JDK 1.8
+* Maven 
+* Nodejs
+* Springboot V2
+* MySQL
+
+
+## Installation
+This service has been tested on Wildfly as the application server.
+
+To install the  module, follow these steps:
+
+Clone the repository to your local machine.
+Install the dependencies.
+
+* npm install
+* npm run build
+* mvn clean install
+## Usage
+All features have been exposed as REST endpoints. Refer to the SWAGGER API specification for details.
+
+
+<!-- # scheduler-ui
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.0-rc.0.
 
@@ -25,4 +62,4 @@ Before running the tests make sure you are serving the app via `ng serve`.
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md). -->
