@@ -40,6 +40,7 @@ import { CalendarOptions } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import { DateTime } from 'ts-luxon';
 import * as moment from 'moment';
+import { SessionStorageService } from 'src/app/app-modules/core/services/session-storage.service';
 
 @Component({
   selector: 'app-timesheet',
@@ -81,6 +82,7 @@ export class TimesheetComponent implements OnInit, OnChanges, DoCheck {
     public httpServiceService: HttpServiceService,
     private confirmationService: ConfirmationService,
     private schedulerService: SchedulerService,
+    readonly sessionstorage: SessionStorageService,
   ) {}
 
   ngOnInit() {
@@ -116,9 +118,11 @@ export class TimesheetComponent implements OnInit, OnChanges, DoCheck {
       console.log('param', param);
       this.designation = param['designation'];
       if (this.designation === 'TC Specialist') {
-        userInfo = { userID: localStorage.getItem('tm-userID') };
+        userInfo = { userID: this.sessionstorage.getItem('tm-userID') };
       } else {
-        userInfo = { userID: localStorage.getItem('supervisor-specialistID') };
+        userInfo = {
+          userID: this.sessionstorage.getItem('supervisor-specialistID'),
+        };
       }
       this.selectedSpecialist = userInfo;
       this.schedulerService
@@ -158,7 +162,8 @@ export class TimesheetComponent implements OnInit, OnChanges, DoCheck {
 
     availabilityFormValue.ExcludeDays = this.getExcludedDays(this.dayList);
 
-    availabilityFormValue.createdBy = localStorage.getItem('tm-userName');
+    availabilityFormValue.createdBy =
+      this.sessionstorage.getItem('tm-userName');
     availabilityFormValue.userID = this.selectedSpecialist.userID;
 
     if (availabilityFormValue.isAvailability === 'true') {
@@ -337,10 +342,10 @@ export class TimesheetComponent implements OnInit, OnChanges, DoCheck {
     this.selectedSpecialist = undefined;
     this.availabiltyForm.reset();
 
-    const providerServiceMapID = localStorage.getItem(
+    const providerServiceMapID = this.sessionstorage.getItem(
       'tm-providerServiceMapID',
     );
-    const userID = localStorage.getItem('tm-userID');
+    const userID = this.sessionstorage.getItem('tm-userID');
     const specializationID = this.selectedSpecialization.specializationID;
     this.schedulerService
       .getSpecialist({ specializationID, providerServiceMapID, userID })
