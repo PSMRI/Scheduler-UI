@@ -38,7 +38,7 @@ import html2canvas from 'html2canvas';
 import { WebcamImage, WebcamInitError } from 'ngx-webcam';
 import { Observable } from 'rxjs';
 import * as saveAs from 'file-saver';
-import { SessionStorageService } from 'src/app/app-modules/core/services/session-storage.service';
+import { SessionStorageService } from 'Common-UI/src/registrar/services/session-storage.service';
 
 interface Mark {
   xCord: any;

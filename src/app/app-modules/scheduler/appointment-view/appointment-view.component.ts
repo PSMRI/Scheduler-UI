@@ -14,7 +14,7 @@ import { SetLanguageComponent } from '../../core/components/set-language.compone
 import { HttpServiceService } from '../../core/services/http-service.service';
 import * as moment from 'moment';
 import { MatTableDataSource } from '@angular/material/table';
-import { SessionStorageService } from 'src/app/app-modules/core/services/session-storage.service';
+import { SessionStorageService } from 'Common-UI/src/registrar/services/session-storage.service';
 import { MatPaginator } from '@angular/material/paginator';
 @Component({
   selector: 'app-appointment-view',

@@ -33,11 +33,11 @@ const COMMON_API_OPEN = `${commonIP}commonapi-3.0.0/`;
 const COMMON_API = `${commonIP}commonapi-v3.0.0/`;
 const SCHEDULER_API = `${schedulerIP}schedulerapi-v3.0.0/`;
 const TM_API = `${tmIP}tmapi-v3.0.0/`;
-import { keys } from './enckey';
+const sessionStorageEncKey = '<%= SESSION_STORAGE_ENC_KEY %>';
 
 export const environment = {
   production: true,
-  encKey: keys.dev,
+  encKey: sessionStorageEncKey,
   app: `TM`,
 
   /**

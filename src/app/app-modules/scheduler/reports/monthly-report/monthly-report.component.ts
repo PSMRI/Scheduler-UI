@@ -27,7 +27,7 @@ import * as moment from 'moment';
 import { SetLanguageComponent } from '../../../core/components/set-language.component';
 import { HttpServiceService } from 'src/app/app-modules/core/services/http-service.service';
 import * as ExcelJS from 'exceljs';
-import { SessionStorageService } from 'src/app/app-modules/core/services/session-storage.service';
+import { SessionStorageService } from 'Common-UI/src/registrar/services/session-storage.service';
 import * as saveAs from 'file-saver';
 
 declare global {

@@ -27,7 +27,7 @@ import { HttpServiceService } from '../../services/http-service.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ShowCommitAndVersionDetailsComponent } from '../show-commit-and-version-details/show-commit-and-version-details.component';
 import { environment } from 'src/environments/environment';
-import { SessionStorageService } from 'src/app/app-modules/core/services/session-storage.service';
+import { SessionStorageService } from 'Common-UI/src/registrar/services/session-storage.service';
 
 @Component({
   selector: 'app-header',
