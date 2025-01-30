@@ -113,7 +113,10 @@
               "browserTarget": "scheduler-ui:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "options":{
+            "port": 4208
+          }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
