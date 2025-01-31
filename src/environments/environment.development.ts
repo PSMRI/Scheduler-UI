@@ -29,7 +29,7 @@ const tmIP = 'https://amritwprdev.piramalswasthya.org/';
 const schedulerIP = 'https://amritwprdev.piramalswasthya.org/';
 
 // Without API MAN Configuration
-const COMMON_API_OPEN = `${commonIP}commonapi-1.0/`;
+const COMMON_API_OPEN = `${commonIP}commonapi-v1.0/`;
 const COMMON_API = `${commonIP}commonapi-v1.0/`;
 const SCHEDULER_API = `${schedulerIP}schedulerapi-v1.0/`;
 const TM_API = `${tmIP}tmapi-v1.0/`;
