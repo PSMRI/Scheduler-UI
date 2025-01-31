@@ -28,6 +28,7 @@ import { ActivatedRoute } from '@angular/router';
 import { SetLanguageComponent } from '../../../core/components/set-language.component';
 import { HttpServiceService } from 'src/app/app-modules/core/services/http-service.service';
 import { MatTableDataSource } from '@angular/material/table';
+import { SessionStorageService } from 'Common-UI/src/registrar/services/session-storage.service';
 
 @Component({
   selector: 'app-create-sms-template',
@@ -70,6 +71,7 @@ export class CreateSmsTemplateComponent implements OnInit, DoCheck {
     private confirmationService: ConfirmationService,
     private location: Location,
     private activatedRoute: ActivatedRoute,
+    readonly sessionstorage: SessionStorageService,
   ) {}
   ngDoCheck(): void {
     throw new Error('Method not implemented.');
@@ -207,8 +209,8 @@ export class CreateSmsTemplateComponent implements OnInit, DoCheck {
 
   addSMSParameterTemplate() {
     const reqObj = {
-      createdBy: localStorage.getItem('tm-userName'),
-      modifiedBy: localStorage.getItem('tm-userName'),
+      createdBy: this.sessionstorage.getItem('tm-userName'),
+      modifiedBy: this.sessionstorage.getItem('tm-userName'),
       smsParameterName: this.parameter,
       smsParameterType: this.smsParameterType.smsParameterType,
       smsParameterID: this.smsParameterValue.smsParameterID,
@@ -250,8 +252,10 @@ export class CreateSmsTemplateComponent implements OnInit, DoCheck {
 
   saveSMStemplate() {
     const requestObject = {
-      createdBy: localStorage.getItem('tm-userName'),
-      providerServiceMapID: localStorage.getItem('tm-providerServiceMapID'),
+      createdBy: this.sessionstorage.getItem('tm-userName'),
+      providerServiceMapID: this.sessionstorage.getItem(
+        'tm-providerServiceMapID',
+      ),
       smsParameterMaps: this.mappedSMSParameter,
       smsTemplate: this.smsTemplate,
       smsTemplateName: this.smsTemplateName,

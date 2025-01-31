@@ -38,6 +38,7 @@ import html2canvas from 'html2canvas';
 import { WebcamImage, WebcamInitError } from 'ngx-webcam';
 import { Observable } from 'rxjs';
 import * as saveAs from 'file-saver';
+import { SessionStorageService } from 'Common-UI/src/registrar/services/session-storage.service';
 
 interface Mark {
   xCord: any;
@@ -93,6 +94,7 @@ export class CameraDialogComponent implements OnInit, DoCheck {
   constructor(
     public dialogRef: MatDialogRef<CameraDialogComponent>,
     public httpServiceService: HttpServiceService,
+    readonly sessionstorage: SessionStorageService,
     private confirmationService: ConfirmationService,
   ) {
     this.options = {
@@ -261,11 +263,11 @@ export class CameraDialogComponent implements OnInit, DoCheck {
 
   getMarkers() {
     return {
-      beneficiaryRegID: localStorage.getItem('beneficiaryRegID'),
-      visitID: localStorage.getItem('visitID'),
-      createdBy: localStorage.getItem('userName'),
+      beneficiaryRegID: this.sessionstorage.getItem('beneficiaryRegID'),
+      visitID: this.sessionstorage.getItem('visitID'),
+      createdBy: this.sessionstorage.getItem('userName'),
       imageID: '',
-      providerServiceMapID: localStorage.getItem('providerServiceID'),
+      providerServiceMapID: this.sessionstorage.getItem('providerServiceID'),
       markers: this.markers,
     };
   }
@@ -280,9 +282,10 @@ export class CameraDialogComponent implements OnInit, DoCheck {
             if (blob) {
               try {
                 const graphName =
-                  `${this.graph.type}_${localStorage.getItem(
+                  `${this.graph.type}_${this.sessionstorage.getItem(
                     'beneficiaryRegID',
-                  )}_${localStorage.getItem('visitID')}` || 'graphTrends';
+                  )}_${this.sessionstorage.getItem('visitID')}` ||
+                  'graphTrends';
                 saveAs(blob, graphName);
               } catch (e) {
                 console.error('Error saving image:', e);

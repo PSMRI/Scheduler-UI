@@ -26,6 +26,7 @@ import { Router } from '@angular/router';
 import { SetLanguageComponent } from '../../../core/components/set-language.component';
 import { HttpServiceService } from 'src/app/app-modules/core/services/http-service.service';
 import { MatTableDataSource } from '@angular/material/table';
+import { SessionStorageService } from 'Common-UI/src/registrar/services/session-storage.service';
 import { MatPaginator } from '@angular/material/paginator';
 @Component({
   selector: 'app-sms-template-list',
@@ -52,6 +53,7 @@ export class SmsTemplateListComponent implements OnInit, DoCheck {
     private confirmationService: ConfirmationService,
     public httpServiceService: HttpServiceService,
     private router: Router,
+    readonly sessionstorage: SessionStorageService,
   ) {}
 
   ngOnInit() {
@@ -89,7 +91,7 @@ export class SmsTemplateListComponent implements OnInit, DoCheck {
 
   activateDeactivate(template: any, flag: any) {
     template.deleted = flag;
-    template.modifiedBy = localStorage.getItem('tm-userName');
+    template.modifiedBy = this.sessionstorage.getItem('tm-userName');
     this.schedulerService.updateSMSTemplate(template).subscribe({
       next: (res: any) => {
         console.log('res', res);

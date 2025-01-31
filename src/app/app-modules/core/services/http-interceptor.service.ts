@@ -36,6 +36,7 @@ import { throwError } from 'rxjs/internal/observable/throwError';
 import { SpinnerService } from './spinner.service';
 import { ConfirmationService } from './confirmation.service';
 import { environment } from 'src/environments/environment';
+import { SessionStorageService } from 'Common-UI/src/registrar/services/session-storage.service';
 
 @Injectable({
   providedIn: 'root',
@@ -47,6 +48,7 @@ export class HttpInterceptorService implements HttpInterceptor {
     private spinnerService: SpinnerService,
     private router: Router,
     private confirmationService: ConfirmationService,
+    readonly sessionstorage: SessionStorageService,
     private http: HttpClient,
   ) {}
 

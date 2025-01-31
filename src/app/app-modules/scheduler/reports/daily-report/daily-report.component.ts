@@ -26,6 +26,7 @@ import { ConfirmationService } from '../../../core/services/confirmation.service
 import { SetLanguageComponent } from '../../../core/components/set-language.component';
 import { HttpServiceService } from 'src/app/app-modules/core/services/http-service.service';
 import * as ExcelJS from 'exceljs';
+import { SessionStorageService } from 'Common-UI/src/registrar/services/session-storage.service';
 import * as saveAs from 'file-saver';
 
 declare global {
@@ -50,6 +51,7 @@ export class DailyReportComponent implements OnInit, DoCheck {
     private schedulerService: SchedulerService,
     public httpServiceService: HttpServiceService,
     private confirmationService: ConfirmationService,
+    readonly sessionstorage: SessionStorageService,
   ) {}
 
   providerServiceMapID: any;
@@ -60,8 +62,10 @@ export class DailyReportComponent implements OnInit, DoCheck {
   criteriaHead: any;
 
   ngOnInit() {
-    this.providerServiceMapID = localStorage.getItem('tm-providerServiceMapID');
-    this.userID = localStorage.getItem('tm-userID');
+    this.providerServiceMapID = this.sessionstorage.getItem(
+      'tm-providerServiceMapID',
+    );
+    this.userID = this.sessionstorage.getItem('tm-userID');
     this.fetchLanguageResponse();
     this.createDailyReportForm();
     /* Set Max date*/

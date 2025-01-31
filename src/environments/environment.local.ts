@@ -33,11 +33,13 @@ const COMMON_API_OPEN = `${commonIP}:8083/`;
 const COMMON_API = `${commonIP}:8083/`;
 const SCHEDULER_API = `${schedulerIP}:8088/`;
 const TM_API = `${tmIP}:8089/`;
+const sessionStorageEncKey = '';
 
 // const TM_API = `${tmIP}tmapi-v1.0/`;
 
 export const environment = {
   production: false,
+  encKey: sessionStorageEncKey,
 
   app: `TM`,
 
