@@ -42,6 +42,7 @@ const defaultEnvValues = {
   COMMON_API_OPEN_SYNC: '',
   TM_API_BASE: '',
   SCHEDULER_API_BASE: '',
+  SESSION_STORAGE_ENC_KEY: '',
 };
 
 // Generate output data
