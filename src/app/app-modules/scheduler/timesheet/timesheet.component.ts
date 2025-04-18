@@ -39,7 +39,7 @@ import { HttpServiceService } from '../../core/services/http-service.service';
 import { CalendarOptions } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import { DateTime } from 'ts-luxon';
-import * as moment from 'moment';
+import moment from 'moment';
 import { SessionStorageService } from 'Common-UI/src/registrar/services/session-storage.service';
 
 @Component({

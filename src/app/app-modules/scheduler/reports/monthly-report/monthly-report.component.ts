@@ -23,12 +23,12 @@ import { Component, DoCheck, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { SchedulerService } from '../../shared/services/scheduler.service';
 import { ConfirmationService } from '../../../core/services/confirmation.service';
-import * as moment from 'moment';
+import moment from 'moment';
 import { SetLanguageComponent } from '../../../core/components/set-language.component';
 import { HttpServiceService } from 'src/app/app-modules/core/services/http-service.service';
 import * as ExcelJS from 'exceljs';
 import { SessionStorageService } from 'Common-UI/src/registrar/services/session-storage.service';
-import * as saveAs from 'file-saver';
+import { saveAs } from 'file-saver';
 
 declare global {
   interface Navigator {

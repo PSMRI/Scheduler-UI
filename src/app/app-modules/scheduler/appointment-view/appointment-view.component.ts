@@ -12,7 +12,7 @@ import { BeneficiaryDetailsService } from '../../core/services/beneficiary-detai
 import { CameraService } from '../../core/services/camera.service';
 import { SetLanguageComponent } from '../../core/components/set-language.component';
 import { HttpServiceService } from '../../core/services/http-service.service';
-import * as moment from 'moment';
+import moment from 'moment';
 import { MatTableDataSource } from '@angular/material/table';
 import { SessionStorageService } from 'Common-UI/src/registrar/services/session-storage.service';
 import { MatPaginator } from '@angular/material/paginator';

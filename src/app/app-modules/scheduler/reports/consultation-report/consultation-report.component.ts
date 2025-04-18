@@ -28,7 +28,7 @@ import { HttpServiceService } from 'src/app/app-modules/core/services/http-servi
 import { FormBuilder, FormGroup } from '@angular/forms';
 import * as ExcelJS from 'exceljs';
 import { SessionStorageService } from 'Common-UI/src/registrar/services/session-storage.service';
-import * as saveAs from 'file-saver';
+import { saveAs } from 'file-saver';
 
 declare global {
   interface Navigator {

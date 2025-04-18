@@ -9,13 +9,14 @@
       "strict": true,
       "noImplicitOverride": true,
       "noPropertyAccessFromIndexSignature": true,
+      "allowSyntheticDefaultImports": true,
       "noImplicitReturns": true,
       "noFallthroughCasesInSwitch": true,
       "sourceMap": true,
       "declaration": false,
       "experimentalDecorators": true,
       "types": ["node"],
-      "moduleResolution": "node",
+      "moduleResolution": "bundler",
       "importHelpers": true,
       "target": "ES2022",
       "module": "ES2022",
@@ -33,4 +34,3 @@
       "fullTemplateTypeCheck": true
     }
   }
-  
