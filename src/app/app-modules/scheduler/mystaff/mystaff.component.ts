@@ -27,9 +27,10 @@ import { SetLanguageComponent } from '../../core/components/set-language.compone
 import { SessionStorageService } from 'Common-UI/src/registrar/services/session-storage.service';
 
 @Component({
-  selector: 'app-mystaff',
-  templateUrl: './mystaff.component.html',
-  styleUrls: ['./mystaff.component.css'],
+    selector: 'app-mystaff',
+    templateUrl: './mystaff.component.html',
+    styleUrls: ['./mystaff.component.css'],
+    standalone: false
 })
 export class MystaffComponent implements OnInit, DoCheck {
   specialistList = [];

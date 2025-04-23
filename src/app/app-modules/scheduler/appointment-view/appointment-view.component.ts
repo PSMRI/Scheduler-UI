@@ -17,9 +17,10 @@ import { MatTableDataSource } from '@angular/material/table';
 import { SessionStorageService } from 'Common-UI/src/registrar/services/session-storage.service';
 import { MatPaginator } from '@angular/material/paginator';
 @Component({
-  selector: 'app-appointment-view',
-  templateUrl: './appointment-view.component.html',
-  styleUrls: ['./appointment-view.component.css'],
+    selector: 'app-appointment-view',
+    templateUrl: './appointment-view.component.html',
+    styleUrls: ['./appointment-view.component.css'],
+    standalone: false
 })
 export class AppointmentViewComponent implements OnInit, OnDestroy, DoCheck {
   languageComponent!: SetLanguageComponent;

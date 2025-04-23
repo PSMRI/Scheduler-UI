@@ -31,9 +31,10 @@ import { MatTableDataSource } from '@angular/material/table';
 import { SessionStorageService } from 'Common-UI/src/registrar/services/session-storage.service';
 
 @Component({
-  selector: 'app-create-sms-template',
-  templateUrl: './create-sms-template.component.html',
-  styleUrls: ['./create-sms-template.component.css'],
+    selector: 'app-create-sms-template',
+    templateUrl: './create-sms-template.component.html',
+    styleUrls: ['./create-sms-template.component.css'],
+    standalone: false
 })
 export class CreateSmsTemplateComponent implements OnInit, DoCheck {
   @Input()

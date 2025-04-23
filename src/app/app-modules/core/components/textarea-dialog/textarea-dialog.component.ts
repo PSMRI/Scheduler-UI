@@ -22,9 +22,10 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 @Component({
-  selector: 'app-textarea-dialog',
-  templateUrl: './textarea-dialog.component.html',
-  styleUrls: ['./textarea-dialog.component.css'],
+    selector: 'app-textarea-dialog',
+    templateUrl: './textarea-dialog.component.html',
+    styleUrls: ['./textarea-dialog.component.css'],
+    standalone: false
 })
 export class TextareaDialogComponent implements OnInit {
   constructor(

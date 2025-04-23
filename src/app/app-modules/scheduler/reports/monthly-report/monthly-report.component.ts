@@ -37,9 +37,10 @@ declare global {
 }
 
 @Component({
-  selector: 'app-monthly-report',
-  templateUrl: './monthly-report.component.html',
-  styleUrls: ['./monthly-report.component.css'],
+    selector: 'app-monthly-report',
+    templateUrl: './monthly-report.component.html',
+    styleUrls: ['./monthly-report.component.css'],
+    standalone: false
 })
 export class MonthlyReportComponent implements OnInit, DoCheck {
   monthlyReportForm!: FormGroup;

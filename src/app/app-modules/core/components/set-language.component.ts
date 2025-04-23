@@ -26,7 +26,8 @@ import { Component } from '@angular/core';
 import { HttpServiceService } from '../services/http-service.service';
 
 @Component({
-  template: '',
+    template: '',
+    standalone: false
 })
 export class SetLanguageComponent {
   static currentLanguageObject: any;

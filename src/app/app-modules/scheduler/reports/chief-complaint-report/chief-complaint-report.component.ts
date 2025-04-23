@@ -36,9 +36,10 @@ declare global {
 }
 
 @Component({
-  selector: 'app-chief-complaint-report',
-  templateUrl: './chief-complaint-report.component.html',
-  styleUrls: ['./chief-complaint-report.component.css'],
+    selector: 'app-chief-complaint-report',
+    templateUrl: './chief-complaint-report.component.html',
+    styleUrls: ['./chief-complaint-report.component.css'],
+    standalone: false
 })
 export class ChiefComplaintReportComponent implements OnInit, DoCheck {
   chiefComplaintForm!: FormGroup;

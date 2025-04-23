@@ -22,7 +22,8 @@
 import { Directive, HostListener } from '@angular/core';
 
 @Directive({
-  selector: '[appMyPassword]',
+    selector: '[appMyPassword]',
+    standalone: false
 })
 export class myPasswordDirective {
   private passwordValidator(password: any) {

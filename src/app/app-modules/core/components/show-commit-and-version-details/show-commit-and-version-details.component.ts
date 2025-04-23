@@ -25,9 +25,10 @@ import { SetLanguageComponent } from '../set-language.component';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-show-commit-and-version-details',
-  templateUrl: './show-commit-and-version-details.component.html',
-  styleUrls: ['./show-commit-and-version-details.component.css'],
+    selector: 'app-show-commit-and-version-details',
+    templateUrl: './show-commit-and-version-details.component.html',
+    styleUrls: ['./show-commit-and-version-details.component.css'],
+    standalone: false
 })
 export class ShowCommitAndVersionDetailsComponent implements OnInit, DoCheck {
   currentLanguageSet: any;

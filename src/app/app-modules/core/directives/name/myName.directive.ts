@@ -22,7 +22,8 @@
 import { Directive, HostListener } from '@angular/core';
 
 @Directive({
-  selector: '[appMyName]',
+    selector: '[appMyName]',
+    standalone: false
 })
 export class myNameDirective {
   @HostListener('keypress', ['$event']) onKeyPress(ev: any) {

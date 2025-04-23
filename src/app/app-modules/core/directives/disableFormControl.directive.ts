@@ -23,7 +23,8 @@ import { Directive, Input } from '@angular/core';
 import { NgControl } from '@angular/forms';
 
 @Directive({
-  selector: '[appDisableFormControl]',
+    selector: '[appDisableFormControl]',
+    standalone: false
 })
 export class DisableFormControlDirective {
   @Input()
