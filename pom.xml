@@ -5,7 +5,7 @@
 	<!-- @Author : Sunil K Sundaram @Date : 21-May-17 @Email : sunil.ks@gmail.com -->
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.iemr.scheduler-ui</groupId>
-	<artifactId>SCHEDULER-UI</artifactId>
+	<artifactId>scheduler-ui</artifactId>
 	<version>3.1.0</version>
 	<name>SCHEDULER-UI</name>
 	<description>Piramal - scheduler: Module ui</description>
