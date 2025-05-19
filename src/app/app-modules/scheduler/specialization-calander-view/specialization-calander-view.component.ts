@@ -23,6 +23,7 @@ import { Component, DoCheck, OnInit } from '@angular/core';
 import { SchedulerService } from '../shared/services/scheduler.service';
 import { SetLanguageComponent } from '../../core/components/set-language.component';
 import { HttpServiceService } from '../../core/services/http-service.service';
+import { SessionStorageService } from 'Common-UI/src/registrar/services/session-storage.service';
 
 @Component({
   selector: 'app-specialization-calander-view',
@@ -41,6 +42,7 @@ export class SpecializationCalanderViewComponent implements OnInit, DoCheck {
   constructor(
     private schedulerService: SchedulerService,
     public httpServiceService: HttpServiceService,
+    readonly sessionstorage: SessionStorageService,
   ) {}
 
   ngOnInit() {
@@ -63,8 +65,10 @@ export class SpecializationCalanderViewComponent implements OnInit, DoCheck {
     const specializationDetails = {
       date: new Date(this.viewDate),
       specializationID: this.selectedSpecialization,
-      userID: localStorage.getItem('tm-userID'),
-      providerServiceMapID: localStorage.getItem('tm-providerServiceMapID'),
+      userID: this.sessionstorage.getItem('tm-userID'),
+      providerServiceMapID: this.sessionstorage.getItem(
+        'tm-providerServiceMapID',
+      ),
     };
 
     this.schedulerService

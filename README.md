@@ -1,5 +1,5 @@
 # AMRIT - Scheduler
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)  ![branch parameter](https://github.com/PSMRI/Scheduler-UI-NEXT/actions/workflows/sast.yml/badge.svg)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)  ![branch parameter](https://github.com/PSMRI/Scheduler-UI/actions/workflows/sast.yml/badge.svg)
 
 It acts as an interface between client and the scheduling services provided, allowing users to interact for consultation with specialists. It also provides the info of availability and unavailability of specialists, retrieving available slots for specialists, booking and cancelling slots, and fetching day views of specialists for a particular specialization.
 
@@ -9,9 +9,10 @@ It acts as an interface between client and the scheduling services provided, all
 * provides specialists availability of any day
 
 ## Prerequisite
-* Java 17
-* maven
-* node 18
+* JDK 17
+* Maven 
+* Nodejs v18.10.0
+* MySQL
 
 ## Run
 * npm install -g @angular/cli@16.2.10
@@ -33,4 +34,13 @@ Refer to `src/environments/environment.ci.template` file and ensure that the rig
 
 Packing with `ci` profile calls `build-ci` script in `package.json`.
 It creates a `environment.ci.ts` file with all environment variables used in the generated build.
+
+## Filing Issues
+
+If you encounter any issues, bugs, or have feature requests, please file them in the [main AMRIT repository](https://github.com/PSMRI/AMRIT/issues). Centralizing all feedback helps us streamline improvements and address concerns efficiently.  
+
+## Join Our Community
+
+We’d love to have you join our community discussions and get real-time support!  
+Join our [Discord server](https://discord.gg/FVQWsf5ENS) to connect with contributors, ask questions, and stay updated.  
 

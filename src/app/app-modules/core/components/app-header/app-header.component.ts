@@ -27,6 +27,7 @@ import { HttpServiceService } from '../../services/http-service.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ShowCommitAndVersionDetailsComponent } from '../show-commit-and-version-details/show-commit-and-version-details.component';
 import { environment } from 'src/environments/environment';
+import { SessionStorageService } from 'Common-UI/src/registrar/services/session-storage.service';
 
 @Component({
   selector: 'app-header',
@@ -58,13 +59,14 @@ export class AppHeaderComponent implements OnInit {
     public httpServiceService: HttpServiceService,
     private confirmationService: ConfirmationService,
     private dialog: MatDialog,
+    readonly sessionstorage: SessionStorageService,
   ) {}
 
   ngOnInit() {
     this.getUIVersionAndCommitDetails();
     this.license = environment.licenseUrl;
-    this.servicePoint = localStorage.getItem('tm-servicePointName');
-    this.userName = localStorage.getItem('tm-userName');
+    this.servicePoint = this.sessionstorage.getItem('tm-servicePointName');
+    this.userName = this.sessionstorage.getItem('tm-userName');
     this.fetchLanguageSet();
     this.isAuthenticated =
       sessionStorage.getItem('tm-isAuthenticated') === 'true';
@@ -189,7 +191,7 @@ export class AppHeaderComponent implements OnInit {
       },
     ];
     if (this.showRoles) {
-      const role: any = localStorage.getItem('tm-roles');
+      const role: any = this.sessionstorage.getItem('tm-roles');
       console.log('role', role);
       this.roles = JSON.parse(role);
       console.log('roles', this.roles);
@@ -207,13 +209,13 @@ export class AppHeaderComponent implements OnInit {
   }
 
   redirectToSpecialistWorklist() {
-    const returnUrl: any = sessionStorage.getItem('tm-return');
+    const returnUrl: any = this.sessionstorage.getItem('tm-return');
     window.location.href = returnUrl;
   }
 
   returnToMMU: any;
   logout() {
-    const loginUrl: any = sessionStorage.getItem('tm-fallback');
+    const loginUrl: any = this.sessionstorage.getItem('tm-fallback');
     this.auth.logout().subscribe(
       (res: any) => {
         this.auth.removeExternalSessionData();
