@@ -7,7 +7,7 @@
 	<groupId>com.iemr.scheduler-ui</groupId>
 	<artifactId>scheduler-ui</artifactId>
 	<version>3.1.0</version>
-	<name>SCHEDULER-UI</name>
+	<name>Scheduler-UI</name>
 	<description>Piramal - scheduler: Module ui</description>
 	<packaging>war</packaging>
 	<profiles>
