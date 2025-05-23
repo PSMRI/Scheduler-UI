@@ -26,7 +26,7 @@ import { ConfirmationService } from '../../../core/services/confirmation.service
 import { SetLanguageComponent } from 'src/app/app-modules/core/components/set-language.component';
 import { HttpServiceService } from 'src/app/app-modules/core/services/http-service.service';
 import * as ExcelJS from 'exceljs';
-import * as saveAs from 'file-saver';
+import { saveAs } from 'file-saver';
 import { SessionStorageService } from 'Common-UI/src/registrar/services/session-storage.service';
 
 declare global {
@@ -36,9 +36,10 @@ declare global {
 }
 
 @Component({
-  selector: 'app-chief-complaint-report',
-  templateUrl: './chief-complaint-report.component.html',
-  styleUrls: ['./chief-complaint-report.component.css'],
+    selector: 'app-chief-complaint-report',
+    templateUrl: './chief-complaint-report.component.html',
+    styleUrls: ['./chief-complaint-report.component.css'],
+    standalone: false
 })
 export class ChiefComplaintReportComponent implements OnInit, DoCheck {
   chiefComplaintForm!: FormGroup;

@@ -30,9 +30,10 @@ import { environment } from 'src/environments/environment';
 import { SessionStorageService } from 'Common-UI/src/registrar/services/session-storage.service';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './app-header.component.html',
-  styleUrls: ['./app-header.component.css'],
+    selector: 'app-header',
+    templateUrl: './app-header.component.html',
+    styleUrls: ['./app-header.component.css'],
+    standalone: false
 })
 export class AppHeaderComponent implements OnInit {
   @Input()

@@ -39,13 +39,14 @@ import { HttpServiceService } from '../../core/services/http-service.service';
 import { CalendarOptions } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import { DateTime } from 'ts-luxon';
-import * as moment from 'moment';
+import moment from 'moment';
 import { SessionStorageService } from 'Common-UI/src/registrar/services/session-storage.service';
 
 @Component({
-  selector: 'app-timesheet',
-  templateUrl: './timesheet.component.html',
-  styleUrls: ['./timesheet.component.css'],
+    selector: 'app-timesheet',
+    templateUrl: './timesheet.component.html',
+    styleUrls: ['./timesheet.component.css'],
+    standalone: false
 })
 export class TimesheetComponent implements OnInit, OnChanges, DoCheck {
   @Input()

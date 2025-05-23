@@ -26,9 +26,10 @@ import { HttpServiceService } from '../../core/services/http-service.service';
 import { SessionStorageService } from 'Common-UI/src/registrar/services/session-storage.service';
 
 @Component({
-  selector: 'app-specialization-calander-view',
-  templateUrl: './specialization-calander-view.component.html',
-  styleUrls: ['./specialization-calander-view.component.css'],
+    selector: 'app-specialization-calander-view',
+    templateUrl: './specialization-calander-view.component.html',
+    styleUrls: ['./specialization-calander-view.component.css'],
+    standalone: false
 })
 export class SpecializationCalanderViewComponent implements OnInit, DoCheck {
   daySlots: any[] = [];

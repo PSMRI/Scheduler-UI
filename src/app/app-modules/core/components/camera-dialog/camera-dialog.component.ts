@@ -37,7 +37,7 @@ import { ChartData, ChartType } from 'chart.js';
 import html2canvas from 'html2canvas';
 import { WebcamImage, WebcamInitError } from 'ngx-webcam';
 import { Observable } from 'rxjs';
-import * as saveAs from 'file-saver';
+import { saveAs } from 'file-saver';
 import { SessionStorageService } from 'Common-UI/src/registrar/services/session-storage.service';
 
 interface Mark {
@@ -48,9 +48,10 @@ interface Mark {
 }
 
 @Component({
-  selector: 'app-camera-dialog',
-  templateUrl: './camera-dialog.component.html',
-  styleUrls: ['./camera-dialog.component.css'],
+    selector: 'app-camera-dialog',
+    templateUrl: './camera-dialog.component.html',
+    styleUrls: ['./camera-dialog.component.css'],
+    standalone: false
 })
 export class CameraDialogComponent implements OnInit, DoCheck {
   @Output() cancelEvent = new EventEmitter();

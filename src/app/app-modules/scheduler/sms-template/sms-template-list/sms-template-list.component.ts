@@ -29,9 +29,10 @@ import { MatTableDataSource } from '@angular/material/table';
 import { SessionStorageService } from 'Common-UI/src/registrar/services/session-storage.service';
 import { MatPaginator } from '@angular/material/paginator';
 @Component({
-  selector: 'app-sms-template-list',
-  templateUrl: './sms-template-list.component.html',
-  styleUrls: ['./sms-template-list.component.css'],
+    selector: 'app-sms-template-list',
+    templateUrl: './sms-template-list.component.html',
+    styleUrls: ['./sms-template-list.component.css'],
+    standalone: false
 })
 export class SmsTemplateListComponent implements OnInit, DoCheck {
   languageComponent!: SetLanguageComponent;

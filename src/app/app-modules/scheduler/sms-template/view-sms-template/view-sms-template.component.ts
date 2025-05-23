@@ -27,9 +27,10 @@ import { Location } from '@angular/common';
 import { SetLanguageComponent } from '../../../core/components/set-language.component';
 import { HttpServiceService } from 'src/app/app-modules/core/services/http-service.service';
 @Component({
-  selector: 'app-view-sms-template',
-  templateUrl: './view-sms-template.component.html',
-  styleUrls: ['./view-sms-template.component.css'],
+    selector: 'app-view-sms-template',
+    templateUrl: './view-sms-template.component.html',
+    styleUrls: ['./view-sms-template.component.css'],
+    standalone: false
 })
 export class ViewSmsTemplateComponent implements OnInit, DoCheck {
   languageComponent!: SetLanguageComponent;
