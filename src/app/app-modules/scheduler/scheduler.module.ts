@@ -41,7 +41,11 @@ import { MonthlyReportComponent } from './reports/monthly-report/monthly-report.
 import { DailyReportComponent } from './reports/daily-report/daily-report.component';
 import { MatTableModule } from '@angular/material/table';
 import { MaterialModule } from '../core/material.module';
-import { NgChartsModule } from 'ng2-charts';
+import {
+  BaseChartDirective,
+  provideCharts,
+  withDefaultRegisterables,
+} from 'ng2-charts';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
 const lang = 'en-US';
@@ -52,7 +56,7 @@ const lang = 'en-US';
     MatTableModule,
     MaterialModule,
     FullCalendarModule,
-    NgChartsModule,
+    BaseChartDirective,
     NgxMatTimepickerModule.setLocale(lang),
     CoreModule.forRoot(),
   ],
@@ -73,6 +77,7 @@ const lang = 'en-US';
     MonthlyReportComponent,
     DailyReportComponent,
   ],
-  providers: [SchedulerService, { provide: LOCALE_ID, useValue: lang }],
+  providers: [
+    provideCharts(withDefaultRegisterables()),SchedulerService, { provide: LOCALE_ID, useValue: lang }],
 })
 export class SchedulerModule {}

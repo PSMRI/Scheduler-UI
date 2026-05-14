@@ -25,5 +25,6 @@ import { Component } from '@angular/core';
   selector: 'app-sms-template',
   templateUrl: './sms-template.component.html',
   styleUrls: ['./sms-template.component.css'],
-})
+
+  standalone: false})
 export class SmsTemplateComponent {}

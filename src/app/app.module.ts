@@ -16,7 +16,11 @@ import { CoreModule } from './app-modules/core/core.module';
 import { CommonModule } from '@angular/common';
 import { WebcamModule } from 'ngx-webcam';
 import { MatMenuModule } from '@angular/material/menu';
-import { NgChartsModule } from 'ng2-charts';
+import {
+  BaseChartDirective,
+  provideCharts,
+  withDefaultRegisterables,
+} from 'ng2-charts';
 import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { HttpInterceptorService } from './app-modules/core/services/http-interceptor.service';
 import { FullCalendarModule } from '@fullcalendar/angular';
@@ -44,11 +48,12 @@ const lang = 'en-US';
     CommonModule,
     WebcamModule,
     MatMenuModule,
-    NgChartsModule,
+    BaseChartDirective,
     NgxMatTimepickerModule.setLocale(lang),
     CoreModule.forRoot(),
   ],
   providers: [
+    provideCharts(withDefaultRegisterables()),
     HttpInterceptorService,
     {
       provide: HTTP_INTERCEPTORS,

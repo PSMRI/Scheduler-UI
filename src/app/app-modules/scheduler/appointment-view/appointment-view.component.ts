@@ -20,7 +20,8 @@ import { MatPaginator } from '@angular/material/paginator';
   selector: 'app-appointment-view',
   templateUrl: './appointment-view.component.html',
   styleUrls: ['./appointment-view.component.css'],
-})
+
+  standalone: false})
 export class AppointmentViewComponent implements OnInit, OnDestroy, DoCheck {
   languageComponent!: SetLanguageComponent;
   selectedSpecialization: any;

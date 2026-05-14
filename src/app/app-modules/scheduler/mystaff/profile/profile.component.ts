@@ -30,7 +30,8 @@ import { MatTabChangeEvent } from '@angular/material/tabs';
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css'],
-})
+
+  standalone: false})
 export class ProfileComponent implements OnInit, OnChanges, DoCheck {
   specialistData: any;
   currentLanguageSet: any;

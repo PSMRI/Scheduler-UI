@@ -32,7 +32,8 @@ import { MatPaginator } from '@angular/material/paginator';
   selector: 'app-sms-template-list',
   templateUrl: './sms-template-list.component.html',
   styleUrls: ['./sms-template-list.component.css'],
-})
+
+  standalone: false})
 export class SmsTemplateListComponent implements OnInit, DoCheck {
   languageComponent!: SetLanguageComponent;
   currentLanguageSet: any;
